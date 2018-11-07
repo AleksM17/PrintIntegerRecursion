@@ -10,7 +10,8 @@ namespace RecursPrintIneger
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(PrintRecursion(3487));
+            //Console.WriteLine(PrintRecursion(3487));
+            PrintRecursion2(1234);
         }
         static int PrintRecursion(int ch)
         {
@@ -21,6 +22,19 @@ namespace RecursPrintIneger
             else
             {
                 return ch % 10 + 10*PrintRecursion(ch / 10);
+            }
+        }
+        static void PrintRecursion2(int ch)
+        {
+            if (Math.Abs(ch)<10)
+            {
+                Console.Write(ch);
+            }
+            else
+            {
+               
+                PrintRecursion2(ch/10);
+                Console.Write(ch%10);
             }
         }
     }
